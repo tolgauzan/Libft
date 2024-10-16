@@ -255,6 +255,16 @@ void	ft_strnstr_check()
 	printf("Aranan ilk harfin adresi %p\n", &fullstr[5]);
 	printf("Bulundu ilk adres %s\n\n\n", ft_strnstr(fullstr,substr,9));
 }
+
+void	ft_strdup_check()
+{
+	char arr[] = "tolga";
+	char *dest = ft_strdup(arr);
+	if (dest)
+		printf("ft_strdup();\n%s \n\n\n", dest);
+	free(dest);
+}
+
 #include <stdlib.h>
 
 void	ft_atoi_check()
@@ -277,6 +287,20 @@ void	ft_atoi_check()
 	printf("atoi() : %d \n\n\n", atoi("\t\n\v\r\f   +21474836499"));
 }
 
+void	ft_calloc_check()
+{
+	int *ptr = (int *)ft_calloc(5,sizeof(int));
+	if (ptr)
+	{
+		printf("calloc () Bellek tahsis edildi ve başlatıldı\n");
+		for(int i = 0; i < 5; i++)
+		{
+			printf("%d\n",ptr[i]);
+		}
+		free(ptr); //Bellek serbest bırakıldı
+	}
+	printf("\n\n\n");
+}
 int	main(void)
 {
 	char str[] = "Hello World";
@@ -302,5 +326,7 @@ int	main(void)
 	ft_memchr_check();
 	ft_memcmp_check();
 	ft_strnstr_check();
+	ft_calloc_check();
+	ft_strdup_check();
 	return (0);
 }
