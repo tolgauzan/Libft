@@ -301,6 +301,20 @@ void	ft_calloc_check()
 	}
 	printf("\n\n\n");
 }
+
+//addition funcs
+void	ft_iter(unsigned int i, char *c)
+{
+	*c = ft_toupper(*c);
+}
+void	ft_striteri_check()
+{
+	char arr[] = "toLGa";
+	ft_striteri(arr, ft_iter);
+	printf("ft_iteri(); arr[] = %s\n\n\n", arr);
+}
+
+
 int	main(void)
 {
 	char str[] = "Hello World";
@@ -328,5 +342,6 @@ int	main(void)
 	ft_strnstr_check();
 	ft_calloc_check();
 	ft_strdup_check();
+	ft_striteri_check();
 	return (0);
 }
