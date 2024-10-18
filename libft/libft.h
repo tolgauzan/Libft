@@ -13,8 +13,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdlib.h>
-# include <unistd.h>
+#include <sys/_types/_size_t.h>
 
 //Libc Functions
 int		ft_isalpha(int c);

@@ -112,12 +112,12 @@ void	ft_memset_check()
 	char myarr[6] = "hello";
 	printf("myarr[6] = %s \n", myarr);
 	printf("ft_memset(myarr,65,sizeof(myarr)- 1)\n");
-	char *pmyarr = (char *)ft_memset(myarr,97,sizeof(myarr) - 1);
+	char *pmyarr = (char *)ft_memset(myarr,255,sizeof(myarr) - 1);
 	printf("Pointer'a return değeri atananak kullanım pmyarr[6] = %s \n", pmyarr);
 	
 	printf("myarr[6] = %s \n", myarr);
 	int myarr2[5] = {1,2,3,4,5};
-	int  *myres_arr2 =(int *) ft_memset(myarr2,0,sizeof(myarr2));
+	int  *myres_arr2 =(int *) ft_memset(myarr2,12,sizeof(myarr2));
 	for (int i = 0; i < 5; i++)
 	{
 		printf("myres_arr2[%d] = %d\n", i, myres_arr2[i]);
@@ -129,7 +129,7 @@ void	ft_memset_check()
 	printf("memset(arr,65,sizeof(arr)- 1)\n");
 	printf("arr[6] = %s \n", arr);
 	int arr2[5] = {1,2,3,4,5};
-	int  *res_arr2 =(int *) memset(arr2,0,sizeof(arr2));
+	int  *res_arr2 =(int *) memset(arr2,12,sizeof(arr2));
 	for (int i = 0; i < 5; i++)
 	{
 		printf("res_arr2[%d] = %d\n", i, res_arr2[i]);
@@ -239,8 +239,8 @@ void	ft_memchr_check()
 
 void	ft_memcmp_check()
 {
-	char arr1[] = "aaaba";
-	char arr2[] = "aaa";
+	char arr1[] = "aaaaa";
+	char arr2[] = "aaaz";
 	printf("ft_memcmp : %d\n",ft_memcmp(arr1,arr2,4));
 	printf("memcmp():  %d\n\n\n", memcmp(arr1,arr2,4));
 }
@@ -270,9 +270,9 @@ void	ft_strdup_check()
 void	ft_atoi_check()
 {
 	printf("#include \"ftlib.h\" ft_atoi(str);\n");
-	printf("ft_atoi() : %d \n", ft_atoi("\t\n\v\r\f  -+2147483647"));
+	printf("ft_atoi() : %d \n", ft_atoi("\t\n\v\r\f  -+-2147483647"));
 	printf("#include <stdlib.h> atoi(str);\n");
-	printf("atoi() : %d \n", atoi("\t\n\v\r  -+2147483647"));
+	printf("atoi() : %d \n", atoi("\t\n\v\r  -+-2147483647"));
 	printf("#include \"ftlib.h\" ft_atoi(str);\n");
 	printf("ft_atoi() : %d \n", ft_atoi("\t\n\v\r\f  -2147483648"));
 	printf("#include <stdlib.h> atoi(str);\n");
@@ -308,8 +308,8 @@ void	ft_iter(unsigned int index, char *c)
 {
 	if (index % 2 == 0)
 	{
-		//*c = ft_toupper(*c);
-		*c = '*';
+		*c = ft_toupper(*c);
+		//*c = '*';
 	}	
 }
 void	ft_striteri_check()
@@ -345,30 +345,6 @@ int	main(void)
 {
 	char str[] = "Hello World";
 
-	ft_isalpha_check();
-	ft_isdigit_check();
-	ft_isalnum_check();
-	ft_isascii_check();
-	ft_isprint_check();
-	ft_strlen_check(str);
-	ft_toupper_check();
-	ft_tolower_check();
-	ft_atoi_check();
-	ft_memset_check();
-	ft_bzero_check();
-	ft_memcpy_check();
-	ft_memmove_check();
-	ft_strlcpy_check();
-	ft_strlcat_check();
-	ft_strchr_check();
-	ft_strrchr_check();
-	ft_strncmp_check();
-	ft_memchr_check();
-	ft_memcmp_check();
-	ft_strnstr_check();
-	ft_calloc_check();
-	ft_strdup_check();
 	ft_striteri_check();
-	ft_strmapi_check();
 	return (0);
 }
