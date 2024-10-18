@@ -303,18 +303,44 @@ void	ft_calloc_check()
 }
 
 //addition funcs
-void	ft_iter(unsigned int i, char *c)
+//striteri
+void	ft_iter(unsigned int index, char *c)
 {
-	*c = ft_toupper(*c);
+	if (index % 2 == 0)
+	{
+		//*c = ft_toupper(*c);
+		*c = '*';
+	}	
 }
 void	ft_striteri_check()
 {
-	char arr[] = "toLGa";
+	char arr[] = "toLGa UzAnNnNnNnN";
 	ft_striteri(arr, ft_iter);
 	printf("ft_iteri(); arr[] = %s\n\n\n", arr);
 }
 
 
+//strmapi
+char	to_upper(unsigned int index, char c)
+{
+	return (char)ft_toupper(c);
+}
+void	ft_strmapi_check()
+{
+	char orjinalstr[] = "ToLGa UzAn";
+	char *resultstr;
+
+	resultstr = ft_strmapi(orjinalstr, to_upper);
+
+	if (resultstr)
+	{
+		printf("strmapi() Result str : %s\n\n\n", resultstr);
+		free(resultstr);
+	}
+	else
+		printf("Bellek tahsisis başarısız oldu");
+	
+}
 int	main(void)
 {
 	char str[] = "Hello World";
@@ -343,5 +369,6 @@ int	main(void)
 	ft_calloc_check();
 	ft_strdup_check();
 	ft_striteri_check();
+	ft_strmapi_check();
 	return (0);
 }
